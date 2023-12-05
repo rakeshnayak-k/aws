@@ -20,3 +20,10 @@ Examples in AWS:
 1. Amazon WorkMail: A secure and managed business email and calendaring service.
 2. Amazon Chime: A communication service that includes online meetings, video conferencing, and business chat.
 3. Amazon Connect: A cloud-based contact center service that makes it easy to set up and manage a customer contact center.
+
+
+
+ports open for working
+SSH - 22
+HTTP -80
+HTTPS - 443
