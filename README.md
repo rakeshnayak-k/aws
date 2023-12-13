@@ -23,24 +23,24 @@ Examples in AWS:
 
 
 
-ports open for working
-SSH - 22
-HTTP -80
-HTTPS - 443
+ports open for working<br>
+SSH - 22<br>
+HTTP -80<br>
+HTTPS - 443<br>
 
 
-Setting Up AWS CodeDeploy Agent on Ubuntu EC2
-script for code deploy for aws ec2 connetcion between ec2 and code deploy
-#!/bin/bash 
-# This installs the CodeDeploy agent and its prerequisites on Ubuntu 22.04.  
-sudo apt-get update 
-sudo apt-get install ruby-full ruby-webrick wget -y 
-cd /tmp 
-wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/releases/codedeploy-agent_1.3.2-1902_all.deb 
-mkdir codedeploy-agent_1.3.2-1902_ubuntu22 
-dpkg-deb -R codedeploy-agent_1.3.2-1902_all.deb codedeploy-agent_1.3.2-1902_ubuntu22 
-sed 's/Depends:.*/Depends:ruby3.0/' -i ./codedeploy-agent_1.3.2-1902_ubuntu22/DEBIAN/control 
-dpkg-deb -b codedeploy-agent_1.3.2-1902_ubuntu22/ 
-sudo dpkg -i codedeploy-agent_1.3.2-1902_ubuntu22.deb 
-systemctl list-units --type=service | grep codedeploy 
-sudo service codedeploy-agent status
+# Setting Up AWS CodeDeploy Agent on Ubuntu EC2
+script for code deploy for aws ec2 connetcion between ec2 and code deploy<br>
+#!/bin/bash <br>
+#This installs the CodeDeploy agent and its prerequisites on Ubuntu 22.04.  <br>
+sudo apt-get update <br>
+sudo apt-get install ruby-full ruby-webrick wget -y <br>
+cd /tmp <br>
+wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/releases/codedeploy-agent_1.3.2-1902_all.deb <br>
+mkdir codedeploy-agent_1.3.2-1902_ubuntu22 <br>
+dpkg-deb -R codedeploy-agent_1.3.2-1902_all.deb codedeploy-agent_1.3.2-1902_ubuntu22 <br>
+sed 's/Depends:.*/Depends:ruby3.0/' -i ./codedeploy-agent_1.3.2-1902_ubuntu22/DEBIAN/control <br>
+dpkg-deb -b codedeploy-agent_1.3.2-1902_ubuntu22/ <br>
+sudo dpkg -i codedeploy-agent_1.3.2-1902_ubuntu22.deb <br>
+systemctl list-units --type=service | grep codedeploy <br>
+sudo service codedeploy-agent status <br>
